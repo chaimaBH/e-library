@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class User implements Serializable {
 
 	
-	private Integer id;
+	private Integer idUser;
 	private String name;
 	private String loggin;
 	private String password;
@@ -26,14 +26,7 @@ public class User implements Serializable {
 	public User() {
 		super();
 	}   
-	@Id    
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}   
+	
 	public String getName() {
 		return this.name;
 	}
@@ -54,6 +47,14 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+@Id
+	public Integer getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(Integer idUser) {
+		this.idUser = idUser;
 	}
 	
 	

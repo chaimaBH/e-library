@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Book implements Serializable {
 
 	
-	private Integer id;
+	private Integer idBook;
 	private String name;
 	private String stat;
 
@@ -26,14 +26,7 @@ public class Book implements Serializable {
 	public Book() {
 		super();
 	}   
-	@Id    
-	public Integer getId() {
-		return this.id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}   
+	   
 	public String getName() {
 		return this.name;
 	}
@@ -56,6 +49,14 @@ public class Book implements Serializable {
 	}
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+@Id
+	public Integer getIdBook() {
+		return idBook;
+	}
+
+	public void setIdBook(Integer idBook) {
+		this.idBook = idBook;
 	}
    
 }
