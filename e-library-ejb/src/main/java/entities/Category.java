@@ -1,30 +1,29 @@
 package entities;
 
 import java.io.Serializable;
-import java.lang.Integer;
-import java.lang.String;
 import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Category
  *
  */
 @Entity
-
 public class Category implements Serializable {
 
-	
 	private Integer idCategory;
 	private String name;
-	private List<Book>books;
 	private static final long serialVersionUID = 1L;
+
+	private List<Book> books;
 
 	public Category() {
 		super();
-	}   
-	  
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -32,14 +31,8 @@ public class Category implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@OneToMany(mappedBy="category")
-	public List<Book> getBooks() {
-		return books;
-	}
-	public void setBooks(List<Book> books) {
-		this.books = books;
-	}
-@Id
+
+	@Id
 	public Integer getIdCategory() {
 		return idCategory;
 	}
@@ -47,5 +40,14 @@ public class Category implements Serializable {
 	public void setIdCategory(Integer idCategory) {
 		this.idCategory = idCategory;
 	}
-   
+
+	@OneToMany(mappedBy = "category")
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+
 }
