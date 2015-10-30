@@ -1,4 +1,4 @@
-package CRUDBookServices;
+package BasicServices;
 
 import java.util.List;
 
@@ -14,18 +14,18 @@ import entities.Book;
  */
 @Stateless
 public class ManageBook implements ManageBookRemote, ManageBookLocal {
-@PersistenceContext
-  EntityManager entityManager;
-    public ManageBook() {
-        // TODO Auto-generated constructor stub
-    }
+	@PersistenceContext
+	EntityManager entityManager;
+
+	public ManageBook() {
+	}
 
 	@Override
 	public Boolean AddBook(Book book) {
 		try {
 			entityManager.persist(book);
 			return true;
-			
+
 		} catch (Exception e) {
 			return false;
 		}
@@ -36,7 +36,7 @@ public class ManageBook implements ManageBookRemote, ManageBookLocal {
 		try {
 			entityManager.merge(book);
 			return true;
-			
+
 		} catch (Exception e) {
 			return false;
 		}
@@ -47,7 +47,7 @@ public class ManageBook implements ManageBookRemote, ManageBookLocal {
 		try {
 			entityManager.remove(entityManager.merge(book));
 			return true;
-			
+
 		} catch (Exception e) {
 			return false;
 		}
@@ -55,13 +55,12 @@ public class ManageBook implements ManageBookRemote, ManageBookLocal {
 
 	@Override
 	public Book FindBookById(Integer idBook) {
-		Book book= null;
+		Book book = null;
 		try {
-			book=entityManager.find(Book.class,idBook);
-			
-			
+			book = entityManager.find(Book.class, idBook);
+
 		} catch (Exception e) {
-			
+
 		}
 		return book;
 	}
@@ -71,6 +70,5 @@ public class ManageBook implements ManageBookRemote, ManageBookLocal {
 		Query query = entityManager.createQuery("select b from Book b");
 		return query.getResultList();
 	}
-    
 
 }

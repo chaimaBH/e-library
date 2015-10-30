@@ -1,13 +1,13 @@
-package CRUDBookServices;
+package BasicServices;
 
 import java.util.List;
 
-import javax.ejb.Remote;
+import javax.ejb.Local;
 
 import entities.Book;
 
-@Remote
-public interface ManageBookRemote {
+@Local
+public interface ManageBookLocal {
 	Boolean AddBook(Book book);
 	Boolean UpdateBook(Book book);
 	Boolean DeleteBook (Book book);

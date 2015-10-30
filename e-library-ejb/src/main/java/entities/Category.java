@@ -24,7 +24,8 @@ public class Category implements Serializable {
 	public Category() {
 		super();
 	}   
-	@Id    
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdCategory() {
 		return this.idCategory;
 	}
