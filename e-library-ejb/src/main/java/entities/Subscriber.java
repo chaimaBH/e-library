@@ -1,7 +1,7 @@
 package entities;
 
-
-import java.lang.Integer;
+import entities.User;
+import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
 import javax.persistence.*;
@@ -12,12 +12,12 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Subscriber extends User {
+public class Subscriber extends User implements Serializable {
 
 	
 	private String FirstName;
 	private String LastName;
-	private Integer PhoneNumber;
+	private String PhoneNumber;
 	private Date DateSubscrib;
 	private static final long serialVersionUID = 1L;
 
@@ -38,11 +38,11 @@ public class Subscriber extends User {
 	public void setLastName(String LastName) {
 		this.LastName = LastName;
 	}   
-	public Integer getPhoneNumber() {
+	public String getPhoneNumber() {
 		return this.PhoneNumber;
 	}
 
-	public void setPhoneNumber(Integer PhoneNumber) {
+	public void setPhoneNumber(String PhoneNumber) {
 		this.PhoneNumber = PhoneNumber;
 	}   
 	public Date getDateSubscrib() {

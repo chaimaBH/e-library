@@ -1,4 +1,4 @@
-package services.basicServices.impl;
+package CRUDBookServices;
 
 import java.util.List;
 
@@ -8,16 +8,14 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import entities.Book;
-import services.basicServices.interfaces.ManageBookLocal;
-import services.basicServices.interfaces.ManageBookRemote;
 
 /**
  * Session Bean implementation class ManageBook
  */
 @Stateless
 public class ManageBook implements ManageBookRemote, ManageBookLocal {
-@PersistenceContext(unitName="e-library-ejb")
-    EntityManager entityManager;
+@PersistenceContext
+  EntityManager entityManager;
     public ManageBook() {
         // TODO Auto-generated constructor stub
     }
@@ -31,7 +29,6 @@ public class ManageBook implements ManageBookRemote, ManageBookLocal {
 		} catch (Exception e) {
 			return false;
 		}
-		
 	}
 
 	@Override
@@ -46,7 +43,7 @@ public class ManageBook implements ManageBookRemote, ManageBookLocal {
 	}
 
 	@Override
-	public Boolean Delete(Book book) {
+	public Boolean DeleteBook(Book book) {
 		try {
 			entityManager.remove(entityManager.merge(book));
 			return true;
@@ -74,5 +71,6 @@ public class ManageBook implements ManageBookRemote, ManageBookLocal {
 		Query query = entityManager.createQuery("select b from Book b");
 		return query.getResultList();
 	}
+    
 
 }

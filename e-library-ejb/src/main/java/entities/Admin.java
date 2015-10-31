@@ -1,6 +1,7 @@
 package entities;
 
-
+import entities.User;
+import java.io.Serializable;
 import java.lang.String;
 import javax.persistence.*;
 
@@ -10,21 +11,21 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Admin extends User {
+public class Admin extends User implements Serializable {
 
 	
-	private String Email;
+	private String email;
 	private static final long serialVersionUID = 1L;
 
 	public Admin() {
 		super();
 	}   
 	public String getEmail() {
-		return this.Email;
+		return this.email;
 	}
 
-	public void setEmail(String Email) {
-		this.Email = Email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
    
 }

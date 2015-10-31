@@ -1,4 +1,4 @@
-package services.basicServices.interfaces;
+package CRUDBookServices;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import entities.Book;
 public interface ManageBookLocal {
 	Boolean AddBook(Book book);
 	Boolean UpdateBook(Book book);
-	Boolean Delete(Book book);
+	Boolean DeleteBook (Book book);
 	Book FindBookById(Integer idBook);
-	List< Book> FindAllBook();
+	List<Book>FindAllBook();
 
 }
