@@ -7,8 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import entities.Book;
-import entities.Subscriber;
 import entities.User;
 
 /**
@@ -18,10 +16,10 @@ import entities.User;
 public class ManageUser implements ManageUserRemote, ManageUserrLocal {
 	@PersistenceContext
 	EntityManager entityManager;
-    public ManageUser() {
-        // TODO Auto-generated constructor stub
-    }
 
+	public ManageUser() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public Boolean AddUser(User user) {
@@ -32,7 +30,7 @@ public class ManageUser implements ManageUserRemote, ManageUserrLocal {
 		} catch (Exception e) {
 			return false;
 		}
-		
+
 	}
 
 	@Override
@@ -74,7 +72,6 @@ public class ManageUser implements ManageUserRemote, ManageUserrLocal {
 		Query query = entityManager.createQuery("select u from User u");
 		return query.getResultList();
 	}
-
 
 	@Override
 	public User login(String loggin, String password) {
