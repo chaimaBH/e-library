@@ -7,19 +7,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-import entities.Book;
 import entities.Subscriber;
 
 /**
  * Session Bean implementation class ManageSubscriber
  */
 @Stateless
-public class ManageSubscriber implements ManageSubscriberRemote, ManageSubscriberLocal {
+public class ManageSubscriber implements ManageSubscriberRemote,
+		ManageSubscriberLocal {
 	@PersistenceContext
 	EntityManager entityManager;
-    public ManageSubscriber() {
-        // TODO Auto-generated constructor stub
-    }
+
+	public ManageSubscriber() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public Boolean AddSubscriber(Subscriber sub) {
@@ -30,7 +31,7 @@ public class ManageSubscriber implements ManageSubscriberRemote, ManageSubscribe
 		} catch (Exception e) {
 			return false;
 		}
-		
+
 	}
 
 	@Override
