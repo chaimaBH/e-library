@@ -17,6 +17,7 @@ public void doBorrowBook(BorrowBook remote)
 {
 Emprunt emp =new Emprunt();
 
+emp.setDateEmprunt(5/11/2015);
     emp.setDateRetour(05/12/2015);
 	
 	if(remote.BorrowBookByUser(emp))

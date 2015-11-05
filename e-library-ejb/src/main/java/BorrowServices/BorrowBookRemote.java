@@ -10,6 +10,7 @@ import entities.Emprunt;
 
 @Remote
 public interface BorrowBookRemote {
+	
 Boolean BorrowBookByUser(Emprunt emp);
 
 
