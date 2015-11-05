@@ -17,7 +17,7 @@ public interface ManageCategoryRemote {
 
 	Category FindCategoryById(Integer id);
 
-	Boolean AssignBookToCategory(Integer id, Book book);
+	//Boolean AssignBookToCategory(Integer id, Book book);
 
 	List<Book> FindAllCategories();
 

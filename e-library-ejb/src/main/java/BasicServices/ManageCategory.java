@@ -74,18 +74,6 @@ public class ManageCategory implements ManageCategoryRemote, ManageCategoryLocal
 		Query query = entityManager.createQuery("select c from Category b");
 		return query.getResultList();
 	}
-	@Override
-	public Boolean AssignBookToCategory(Integer id, Book book) {
-		Boolean b = false;
-		try {
-			//code
-			
-			
-		} catch (Exception e) {
-		}
-		return b;
-	}
-
 	
 	
 }

@@ -13,7 +13,7 @@ public interface ManageCategoryLocal {
 	Boolean UpdateCategory(Category cat);
 	Boolean DeleteCategory (Category cat);
 	Category FindCategoryById(Integer id);
-	Boolean AssignBookToCategory(Integer id, Book book);
+	//Boolean AssignBookToCategory(Integer id, Book book);
 	List<Book>FindAllCategories();
 
 }
