@@ -10,39 +10,22 @@ import javax.persistence.*;
  *
  */
 
-
+@Entity
 public class Emprunt implements Serializable {
 
-	private Date DateRetour;
 	
-private EmpruntPK empruntPk;
-
-	private static final long serialVersionUID = 1L;
-
-	public Emprunt() {
-		super();
-	}   
-	public Date getDateRetour() {
-		return this.DateRetour;
-	}
-
-	public void setDateRetour(Date DateRetour) {
-		this.DateRetour = DateRetour;
-	}
-	@EmbeddedId
-	public EmpruntPK getEmpruntPk() {
-		return empruntPk;
-	}
+	private int DateEmprunt;
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((DateRetour == null) ? 0 : DateRetour.hashCode());
+		result = prime * result + DateEmprunt;
+		result = prime * result + DateRetour;
 		result = prime * result
 				+ ((empruntPk == null) ? 0 : empruntPk.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -52,10 +35,9 @@ private EmpruntPK empruntPk;
 		if (getClass() != obj.getClass())
 			return false;
 		Emprunt other = (Emprunt) obj;
-		if (DateRetour == null) {
-			if (other.DateRetour != null)
-				return false;
-		} else if (!DateRetour.equals(other.DateRetour))
+		if (DateEmprunt != other.DateEmprunt)
+			return false;
+		if (DateRetour != other.DateRetour)
 			return false;
 		if (empruntPk == null) {
 			if (other.empruntPk != null)
@@ -64,8 +46,40 @@ private EmpruntPK empruntPk;
 			return false;
 		return true;
 	}
-	public void setEmpruntPk(EmpruntPK empruntPk) {
-		this.empruntPk = empruntPk;
+
+	private int  DateRetour;
+	
+
+
+private EmpruntPK empruntPk;
+
+	private static final long serialVersionUID = 1L;
+
+	public Emprunt() {
+		super();
+	}   
+	
+	@EmbeddedId
+	public EmpruntPK getEmpruntPk() {
+		return empruntPk;
 	}
+
+	public int getDateRetour() {
+		return DateRetour;
+	}
+
+	public void setDateRetour(int dateRetour) {
+		DateRetour = dateRetour;
+	}
+
+	public int getDateEmprunt() {
+		return DateEmprunt;
+	}
+
+	public void setDateEmprunt(int dateEmprunt) {
+		DateEmprunt = dateEmprunt;
+	}
+	
+	
    
 }

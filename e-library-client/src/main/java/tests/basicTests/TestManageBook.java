@@ -12,7 +12,7 @@ static	ManageBookRemote remote;
 
 public static void doAddBook(ManageBookRemote remote){
 	Book book = new Book();
-	book.setName("thedavincicode");
+	book.setName("the davinci code");
 	if(remote.AddBook(book))
 	{
 		System.out.println("Book added !!!! ");

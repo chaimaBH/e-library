@@ -1,6 +1,7 @@
 package entities;
 
 import java.io.Serializable;
+import java.util.Enumeration;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,7 @@ public class Book implements Serializable {
 	private Integer idBook;
 	private String Name;
 	private Category category;
+	private Enumeration<Book> State;
 	private static final long serialVersionUID = 1L;
 
 	public Book() {
@@ -49,6 +51,14 @@ public class Book implements Serializable {
 
 	public void setCategory(Category category) {
 		this.category = category;
+	}
+
+	public Enumeration<Book> getState() {
+		return State;
+	}
+
+	public void setState(Enumeration<Book> state) {
+		State = state;
 	}
 
 }
